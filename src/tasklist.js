@@ -111,11 +111,8 @@ export default class TaskList {
     }
 
     static clearCompleted() {
-      TaskList.taskList = TaskList.taskList.filter((task) => task.completed === false);
 
-      for (let i = 0; i < TaskList.taskList.length; i += 1) {
-        TaskList.taskList[i].index = i;
-      }
+      TaskList.taskList = Crud.clearAll(TaskList.taskList);
 
       TaskList.itemID = TaskList.taskList.length;
 
