@@ -6,7 +6,7 @@ export default class Crud {
     taskList.push(newTask);
   }
 
-  static delete(taskList, index) {
+  static remove(taskList, index) {
     const idx = parseInt(index, 10);
 
     taskList.splice(idx, 1);

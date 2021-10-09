@@ -102,7 +102,7 @@ export default class TaskList {
     static removeItem(event) {
       const taskItem = event.currentTarget.parentElement;
 
-      Crud.delete(TaskList.taskList, taskItem.id);
+      Crud.remove(TaskList.taskList, taskItem.id);
 
       Storage.saveToStorage(TaskList.taskList);
 
