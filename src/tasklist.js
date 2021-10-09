@@ -111,7 +111,6 @@ export default class TaskList {
     }
 
     static clearCompleted() {
-
       TaskList.taskList = Crud.clearAll(TaskList.taskList);
 
       TaskList.itemID = TaskList.taskList.length;

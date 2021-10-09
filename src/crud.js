@@ -23,11 +23,10 @@ export default class Crud {
   }
 
   static clearAll(tasklist) {
-    
     tasklist = tasklist.filter((task) => task.completed === false);
-  
+
     for (let i = 0; i < tasklist.length; i += 1) {
-        tasklist[i].index = i;
+      tasklist[i].index = i;
     }
     return tasklist;
   }

@@ -1,7 +1,6 @@
 import { update, updateCompleted, clearAll } from './test-part-two.js';
 
-let taskList = [{ description: 'Old Description', completed: false, index: 0 },];
-
+let taskList = [{ description: 'Old Description', completed: false, index: 0 }];
 
 describe('Update description, update completed and clear all functions', () => {
   test('Update function', () => {
@@ -23,22 +22,22 @@ describe('Update description, update completed and clear all functions', () => {
     // Act
     updateCompleted(taskList, index);
 
-    //Assert
+    // Assert
     expect(taskList[index].completed).toBe(true);
   });
 
   test('Clear All function', () => {
     // Arrange
     taskList = [{ description: 'Old Description', completed: false, index: 0 },
-                { description: 'Old Description', completed: true, index: 0 },
-                { description: 'Old Description', completed: true, index: 0 },
-                { description: 'Old Description', completed: false, index: 0 },
+      { description: 'Old Description', completed: true, index: 0 },
+      { description: 'Old Description', completed: true, index: 0 },
+      { description: 'Old Description', completed: false, index: 0 },
     ];
 
     // Act
     taskList = clearAll(taskList);
 
-    //Assert
+    // Assert
     expect(taskList.length).toBe(2);
   });
 });
