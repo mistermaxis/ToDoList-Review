@@ -6,7 +6,7 @@ export default class Crud {
     taskList.push(newTask);
   }
 
-  static delete(taskList, index) {
+  static remove(taskList, index) {
     const idx = parseInt(index, 10);
 
     taskList.splice(idx, 1);
@@ -20,5 +20,14 @@ export default class Crud {
     const idx = parseInt(index, 10);
 
     taskList[idx].description = newDescription;
+  }
+
+  static clearAll(tasklist) {
+    tasklist = tasklist.filter((task) => task.completed === false);
+
+    for (let i = 0; i < tasklist.length; i += 1) {
+      tasklist[i].index = i;
+    }
+    return tasklist;
   }
 }

@@ -102,7 +102,7 @@ export default class TaskList {
     static removeItem(event) {
       const taskItem = event.currentTarget.parentElement;
 
-      Crud.delete(TaskList.taskList, taskItem.id);
+      Crud.remove(TaskList.taskList, taskItem.id);
 
       Storage.saveToStorage(TaskList.taskList);
 
@@ -111,11 +111,7 @@ export default class TaskList {
     }
 
     static clearCompleted() {
-      TaskList.taskList = TaskList.taskList.filter((task) => task.completed === false);
-
-      for (let i = 0; i < TaskList.taskList.length; i += 1) {
-        TaskList.taskList[i].index = i;
-      }
+      TaskList.taskList = Crud.clearAll(TaskList.taskList);
 
       TaskList.itemID = TaskList.taskList.length;
 
